@@ -1,0 +1,40 @@
+schema {
+
+    query: Query,
+    mutation:Mutation
+}
+
+type UserDetails {
+	
+	id:ID!,
+	pnrNo:Long,
+	name:String,
+	age:Int,
+	sex:String,
+	address:String,
+	trainNo:Int,
+	trainName:String,
+	startStation:String,
+	destStation:String,
+	classType:String,
+	adults:Int,
+	children:Int,
+	payment:String
+	
+    }
+    
+type Query{
+    
+    getAll:[UserDetails]
+    getUserDetailsById(pnrNo:Long) : UserDetails
+    
+   }
+   
+ type Mutation{
+ 
+ 	deleteUserBookingDetails(pnrNo:Long): UserDetails
+    
+    addUserBookingDetails(id:Int,pnrNo:Long,name:String,age:Int,sex:String,
+    address:String,trainNo:Int,trainName:String ,startStation:String,
+    destStation:String,classType:String,adults:Int,children:Int,payment:String):UserDetails
+ }

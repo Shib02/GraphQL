@@ -1,0 +1,29 @@
+schema {
+    query: Query
+    
+}
+
+type TrainDetails {
+    trainNo:ID!,
+ trainName:String,
+	 startStation:String,
+	 destStation:String,
+arrivalTime:String,
+	
+ deptTime:String,
+ duration:String,
+	  noOfSeats:Int,
+	
+	 firstClassACFare:Int,
+	 twoTierAcFare:Int,
+	 threeTierAcFare:Int,
+	 sleeperFare:Int
+    }
+    type Query{
+    
+    getAllDetails:[TrainDetails]
+    
+     getDetailsByTrainNo(trainNo:Int) : TrainDetails
+    getTrainDetailsByStartStation(startStation:String, destStation:String) : [TrainDetails]
+    
+   }
